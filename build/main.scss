@@ -1,0 +1,101 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wrapper {
+    align-self: center;
+    width: fit-content;
+    h2 {
+        text-align: center;
+    }
+}
+
+#app {
+    display: flex;
+    width: fit-content;
+    .board {
+        display: grid;
+        .row {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .col {
+            display: flex;
+            justify-content: center;
+            margin: 0 10px 10px 0;
+            background-color: lightgray;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            border-bottom-color: orange;
+            border-right-color: orange;
+            box-shadow: 3px 3px orange;
+            &.won>div {
+                font-size: 100px;
+                color: green;
+                align-self: center;
+            }
+            div {
+                font-size: 80px;
+                text-align: center;
+            }
+        }
+    }
+    .game-info {
+        background-color: #c1c1c1;
+        border: 1px solid black;
+        margin-left: 15px;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        &.draw {
+            background-color: #da8d21;
+        }
+        &.win {
+            background-color: #02782a;
+            color: white;
+        }
+        .player {
+            display: flex;
+            align-self: center;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 70%;
+            padding: 10px;
+            line-height: 30px;
+            *.active {
+                background-color: #da8d21;
+            }
+            *.win {
+                background-color: #d3d3d3;
+                color: black;
+            }
+            * {
+                width: 100%;
+            }
+            .player_2 {
+                margin-top: 10px;
+            }
+        }
+        .score {
+            padding: 10px;
+            .score_counter {
+                margin-top: 10px;
+                font-size: 1.5em;
+            }
+        }
+        .status {
+            flex: 0 0 35%;
+        }
+        .reset-button {
+            cursor: pointer;
+            width: fit-content;
+            align-self: center;
+            height: 30px;
+        }
+    }
+}
